@@ -5,13 +5,15 @@ import java.util.Scanner;
 public class TicTakToeGame {
 	public static char player = ' ';
 	public static char computer = ' ';
-	
 
 	public static void main(String[] args) {
 
 		TicTakToeGame obj = new TicTakToeGame();
 		obj.createBoard();
-		obj.chooseinput();
+		Scanner scan = new Scanner(System.in);
+		char player = chooseInput(scan);
+		char computer = (player == 'X') ? 'O' : 'X';
+		System.out.println(player + " is your choosen value " );
 
 	}
 
@@ -23,27 +25,9 @@ public class TicTakToeGame {
 		}
 	}
 
-	public void chooseinput() {
-
-		Scanner scan = new Scanner(System.in);
-		System.out.println(" Enter the input you want");
-		char input = scan.next().charAt(0);
-
-		if (input == 'x' || input == 'X') {
-			System.out.println(" you have choosen x as your input ");
-			player = input;
-			computer = 'O';
-
-		}
-
-		else if (input == 'o' || input == 'O') {
-			System.out.println(" you have choosen o as your input as ");
-			player = input;
-			computer = 'O';
-
-		} else {
-			System.out.println(" please enter a valid input ");
-		}
+	public static char chooseInput(Scanner scan) {
+		System.out.println(" Enter the input value you want : ");
+		return scan.next().toUpperCase().charAt(0);
 
 	}
 
