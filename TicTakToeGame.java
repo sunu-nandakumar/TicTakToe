@@ -16,6 +16,7 @@ public  void createBoard() {
 		
 		TicTakToeGame obj = new TicTakToeGame();
 		obj.createBoard();
+		System.out.println(" adding the board");
 	
 	}
 
