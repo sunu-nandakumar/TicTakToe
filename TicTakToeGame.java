@@ -5,24 +5,28 @@ import java.util.Scanner;
 public class TicTakToeGame {
 	public static char player = ' ';
 	public static char computer = ' ';
+	
 
 	public static void main(String[] args) {
 
 		TicTakToeGame obj = new TicTakToeGame();
-		obj.createBoard();
+		char [] board = TicTakToeGame.createBoard();
 		Scanner scan = new Scanner(System.in);
 		char player = chooseInput(scan);
 		char computer = (player == 'X') ? 'O' : 'X';
-		System.out.println(player + " is your choosen value " );
+		System.out.println(player + " is your choosen value ");
+		showBoard(board);
 
 	}
 
-	public void createBoard() {
+	public static char[] createBoard() {
 		char[] board = new char[10];
+		
 		for (int i = 1; i < board.length; i++) {
 
 			board[i] = ' ';
 		}
+		return board;
 	}
 
 	public static char chooseInput(Scanner scan) {
@@ -31,4 +35,10 @@ public class TicTakToeGame {
 
 	}
 
+	public static void showBoard(char[] board) {
+		
+		System.out.println(board);
+	
+
+	}
 }
